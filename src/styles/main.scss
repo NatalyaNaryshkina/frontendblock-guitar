@@ -1,7 +1,118 @@
 @use 'font' as *;
 @use 'var' as *;
 
-
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: $font;
+  font-weight: 400;
+  background-color: #1F2023;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  height: 71px;
+  align-items: stretch;
+  justify-content: space-between;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 27px;
+    position: absolute;
+    background-color: $accent;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &__logo{
+    background-color: $accent;
+    padding: 17px 45px 0 45px;
+    border-radius: 10px 0 0 0;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: 26px;
+      height: 24px;
+      background-image: url("../images/header-bottom-left.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 68px;
+      height: 71px;
+      background-image: url(../images/header-left.svg);
+      position: absolute;
+      right: -68px;
+      top: 0;
+    }
+  }
+  &__link {
+    color: $light;
+    font-size: 20px;
+    background-color: $accent;
+    padding: 17px 45px 0 45px;
+    border-radius: 0 10px 0 0;
+    position: relative;
+    &::before {
+      content: '';
+      width: 68px;
+      height: 71px;
+      background-image: url(../images/header-right.svg);
+      position: absolute;
+      top: 0;
+      left: -68px;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 26px;
+      height: 24px;
+      background-image: url("../images/header-bottom-right.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      bottom: -24px;
+      right: 0;
+    }
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1830px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../images/bg-banner.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  margin-top: 40px;
+  margin-bottom: 150px;
+  padding: 100px 50px 102px;
+  gap: 50px;
+  &__main {
+
+  }
+  &__box {
+    max-width: 1031px;
+  }
 }
